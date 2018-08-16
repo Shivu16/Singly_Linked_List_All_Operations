@@ -1,0 +1,94 @@
+void insert_beg(int num)
+    {
+       new_node=new node;
+       new_node->value=num;
+       new_node->next=start;
+       start=new_node;
+    }
+    /*void insert_beg1(int num)
+    {
+       new_node=new node;
+       new_node->value=num;
+       new_node->next=start;
+       start=new_node;
+       while(new_node!=start)
+        {
+        
+    }*/
+  void insert_end(int num)
+    {
+       new_node=new node;
+       new_node->value=num;
+       new_node->next=NULL;
+       save->next=new_node;
+       save=new_node;
+    }
+
+   void insert_after(int given,int num)
+    {   copy_==NULL;
+      ptr=start;
+      while(ptr!=NULL)
+       {
+         if(ptr->value==given)
+          {
+            break;
+          }
+         ptr=ptr->next;
+       }
+       new_node=new node;
+       new_node->value=num;
+       new_node->next=ptr->next;
+       ptr->next=new_node;
+    }
+   void insert_before(int given,int num)
+     {
+       ptr=start;
+       while(ptr!=NULL)
+        {
+          if(ptr->value==given)
+           {
+             break;
+           }
+           copy_=ptr;
+           ptr=ptr->next;
+        }
+       if(copy_==NULL)
+        {
+           insert_beg(num);
+        }
+       else
+        {
+           new_node=new node;
+           new_node->value=num;
+           new_node->next=copy_->next;
+           copy_->next=new_node;
+        }
+     }
+    void insert_sort(int num)
+     {
+       ptr=start;
+       while(ptr!=NULL)
+        {
+          if(ptr->value>num)
+           {
+              break;
+           }
+           copy_=ptr;
+           ptr=ptr->next;
+        }
+       if(ptr==NULL)
+        {
+           insert_end(num);
+        }
+       else if(copy_==NULL)
+        {
+           insert_beg(num);
+        }
+       else
+        {
+           new_node=new node;
+           new_node->value=num;
+           new_node->next=copy_->next;
+           copy_->next=new_node;
+        }
+     }  
